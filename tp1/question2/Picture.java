@@ -20,10 +20,14 @@ public class Picture {
     private Square window;
     private Triangle roof;
     private Circle sun;
-
+    private Circle sunY;
+    public boolean terrefixe=true;
+    
     /**
      * Constructor for objects of class Picture
      */
+    
+    
     public Picture() {
         // nothing to do... instance variables are automatically set to null
     }
@@ -50,11 +54,21 @@ public class Picture {
         roof.makeVisible();
 
         sun = new Circle();
-        sun.changeColor("yellow");
+        sun.changeColor("blue");
         sun.moveHorizontal(180);
         sun.moveVertical(-10);
         sun.changeSize(60);
         sun.makeVisible();
+        
+        sunY = new Circle();
+        sunY.changeColor("yellow");
+        sunY.moveHorizontal(180);
+        sunY.moveVertical(-10);
+        sunY.changeSize(30);
+        sunY.makeVisible();
+        
+        couchersoleil (sun);
+        
     }
 
     /**
@@ -82,5 +96,12 @@ public class Picture {
             sun.changeColor("yellow");
         }
     }
+public void couchersoleil(Circle c) {
+        
+    if (terrefixe)
+        c.slowMoveVertical(100);
+    
+}
+
 
 }
